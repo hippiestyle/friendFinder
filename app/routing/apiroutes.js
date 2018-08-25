@@ -4,9 +4,10 @@ var friends = require("../data/friends.js");
 var app = express(); 
 
 module.exports = function(app){
-    app.get("../data/friends.js");
+    app.get("../data/friends.js", function(req, res){
     res.json(friends);
-}
+    
+});
 console.log(friends)
 
 app.post("../data/friends.js", function(req, res){
@@ -42,3 +43,4 @@ app.post("../data/friends.js", function(req, res){
         console.log("worst" + worstFriend);
 
 })
+}
