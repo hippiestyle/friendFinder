@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Friend Haters - Survey </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-4">Friend Haters - Survey</h1>
+                <p class="lead">This is your opportunity to speak openly and freely about how you feel about certain things. It's possible that there are people out there that simply don't agree with you, and that's okay! We're going to expose those people.</p>
+            </div>
+            </div>
+
+    <form>
+        <div class="form-group">
+            <label for="enter-name">What's Your Name? (Required)</label>
+            <input type="name" class="form-control" id="enter-name" aria-describedby="name" placeholder="Enter Name">
+            <small id="nameHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+                <label for="pictureURL">Link a URL to a picture of you (Required)</label>
+                <input type="photoLink" class="form-control" id="picture-URL" aria-describedby="URL" placeholder="URL Picture">
+                <small id="nameHelp" class="form-text text-muted"></small>
+            </div>
+    
+    <br>
+    <hr>
+
+    <div class="form-group">
+            <label for="exampleFormControlSelect1">What was your favourite movie growing up?</label>
+            <select class="form-control" id="q1" style="width:500px">
+                <option value="1">Little Mermaid</option>
+                <option value="2">Finding Nemo</option>
+                <option value="3">Harry Potter</option>
+                <option value="4">Aladdin</option>
+                <option value="5">I didn't watch movies, I only listened to Wu Tang Clan</option>
+            </select>
+            </div>
+            <hr>
+    <div class="form-group">
+            <label for="exampleFormControlSelect2">What kind of music do you listen to? (Be Honest)</label>
+            <select class="form-control" id="q2" style="width:500px">
+                <option value="1">That new Ariana Grande ish</option>
+                <option value="2">Shawn Mendes</option>
+                <option value="3">Anything with a banjo</option>
+                <option value="4"></option>
+                <option value="5">I didn't watch movies, I only listened to Wu Tang Clan</option>
+            </select>
+            </div>
+            <hr>
+    <div class="form-group">
+            <label for="exampleFormControlSelect3">What Best Describes Your Personality?</label>
+            <select class="form-control" id="q3" style="width:500px">
+                <option value="1">I like making people happy</option>
+                <option value="2">I feel like I make calculated decisions</option>
+                <option value="3">I like to get shit done</option>
+                <option value="4">I think it's important for people to think I'm intelligent</option>
+                <option value="5">I like being alone</option>
+            </select>
+            </div>
+            <hr>
+    <div class="form-group">
+            <label for="exampleFormControlSelect4">What is your dream vacation?</label>
+            <select class="form-control" id="q4" style="width:500px">
+                <option value="1">The Toronto Shangri-La for a week</option>
+                <option value="2">Caribbean beach vacation</option>
+                <option value="3">Eurotrip! </option>
+                <option value="4">Bali</option>
+                <option value="5">The poorest parts of China</option>
+            </select>
+            </div>
+            <hr>
+    <div class="form-group">
+            <label for="exampleFormControlSelect5">What is your dream vacation?</label>
+            <select class="form-control" id="q5" style="width:500px">
+                <option value="1">The Toronto Shangri-La for a week</option>
+                <option value="2">Caribbean beach vacation</option>
+                <option value="3">Eurotrip! </option>
+                <option value="4">Bali</option>
+                <option value="5">The poorest parts of China</option>
+            </select>
+            </div>
+            <hr>
+    <div class="form-group">
+            <label for="exampleFormControlSelect6">What is your dream vacation?</label>
+            <select class="form-control" id="q6" style="width:500px">
+                <option value="1">The Toronto Shangri-La for a week</option>
+                <option value="2">Caribbean beach vacation</option>
+                <option value="3">Eurotrip! </option>
+                <option value="4">Bali</option>
+                <option value="5">The poorest parts of China</option>
+            </select>
+            </div>
+    <div class="form-group">
+            <label for="exampleFormControlSelect7">What is your dream vacation?</label>
+            <select class="form-control" id="q7" style="width:500px">
+                <option value="1">The Toronto Shangri-La for a week</option>
+                <option value="2">Caribbean beach vacation</option>
+                <option value="3">Eurotrip! </option>
+                <option value="4">Bali</option>
+                <option value="5">The poorest parts of China</option>
+            </select>
+            </div>            
+    <div class="form-group">
+            <label for="exampleFormControlSelect8">What is your dream vacation?</label>
+            <select class="form-control" id="q8" style="width:500px">
+                <option value="1">The Toronto Shangri-La for a week</option>
+                <option value="2">Caribbean beach vacation</option>
+                <option value="3">Eurotrip! </option>
+                <option value="4">Bali</option>
+                <option value="5">The poorest parts of China</option>
+            </select>
+            </div>
+    <input class="btn btn-primary" type="submit" value="Submit">
+
+    </form>
+
+<script type="text/javascript">
+$(".btn-primary").on("click", function() {
+    event.preventDefault(); 
+    console.log("Okay");
+
+    function validation() {
+        var check = true; 
+        $(".form-control").each(function(){
+            if($(this).val() === "") {
+             check = false;
+            }
+
+
+        }); return check; 
+    }
+
+    if (validation() === true) {
+        var userInput = { 
+            name: $("#enter-name").val(),
+            photo: $("#picture-URL").val(),
+            scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val()]
+        }
+        console.log(userInput); 
+    } else {
+        alert("Please fill in all the data")
+    } 
+});
+
+</script>
+
+</body>
+</html>
+
