@@ -1,4 +1,5 @@
-var friends  = {
+var friends  = [
+    {
     "name": "Ahmed",
     "photo": "https://i1.rgstatic.net/ii/profile.image/389169479208960-1469796642312_Q512/Ejaz_Ahmed12.jpg",
     "scores" :[
@@ -13,5 +14,7 @@ var friends  = {
         4,
         1
       ]
-  };
+  },
+];
   
+  module.exports = friends;

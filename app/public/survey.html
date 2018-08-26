@@ -31,6 +31,7 @@
     <hr>
 
     <div class="form-group">
+            <h5 class="card-title">Question 1</h5>
             <label for="exampleFormControlSelect1">What was your favourite movie growing up?</label>
             <select class="form-control" id="q1" style="width:500px">
                 <option value="1">Little Mermaid</option>
@@ -42,6 +43,7 @@
             </div>
             <hr>
     <div class="form-group">
+            <h5 class="card-title">Question 2</h5>
             <label for="exampleFormControlSelect2">What kind of music do you listen to? (Be Honest)</label>
             <select class="form-control" id="q2" style="width:500px">
                 <option value="1">That new Ariana Grande ish</option>
@@ -53,8 +55,9 @@
             </div>
             <hr>
     <div class="form-group">
+            <h5 class="card-title">Question 3</h5>
             <label for="exampleFormControlSelect3">What Best Describes Your Personality?</label>
-            <select class="form-control" id="q3" style="width:500px">
+            <select class="form-control" id="q3" style="width:500px" >
                 <option value="1">I like making people happy</option>
                 <option value="2">I feel like I make calculated decisions</option>
                 <option value="3">I like to get shit done</option>
@@ -64,6 +67,7 @@
             </div>
             <hr>
     <div class="form-group">
+            <h5 class="card-title">Question 4</h5>
             <label for="exampleFormControlSelect4">What is your dream vacation?</label>
             <select class="form-control" id="q4" style="width:500px">
                 <option value="1">The Toronto Shangri-La for a week</option>
@@ -75,6 +79,7 @@
             </div>
             <hr>
     <div class="form-group">
+            <h5 class="card-title">Question 5</h5>
             <label for="exampleFormControlSelect5">What is your dream vacation?</label>
             <select class="form-control" id="q5" style="width:500px">
                 <option value="1">The Toronto Shangri-La for a week</option>
@@ -86,6 +91,7 @@
             </div>
             <hr>
     <div class="form-group">
+            <h5 class="card-title">Question 6</h5>
             <label for="exampleFormControlSelect6">What is your dream vacation?</label>
             <select class="form-control" id="q6" style="width:500px">
                 <option value="1">The Toronto Shangri-La for a week</option>
@@ -96,6 +102,7 @@
             </select>
             </div>
     <div class="form-group">
+            <h5 class="card-title">Question 7</h5>
             <label for="exampleFormControlSelect7">What is your dream vacation?</label>
             <select class="form-control" id="q7" style="width:500px">
                 <option value="1">The Toronto Shangri-La for a week</option>
@@ -106,6 +113,7 @@
             </select>
             </div>            
     <div class="form-group">
+            <h5 class="card-title">Question 8</h5>
             <label for="exampleFormControlSelect8">What is your dream vacation?</label>
             <select class="form-control" id="q8" style="width:500px">
                 <option value="1">The Toronto Shangri-La for a week</option>
@@ -115,13 +123,17 @@
                 <option value="5">The poorest parts of China</option>
             </select>
             </div>
-    <input class="btn btn-primary" type="submit" value="Submit">
+    <input class="btn btn-primary" id="formSubmit" type="submit" value="Submit">
+    
 
     </form>
 
+
+
 <script type="text/javascript">
-$(".btn-primary").on("click", function() {
-    event.preventDefault(); 
+
+$("#formSubmit").on("click", function() {
+
     console.log("Okay");
 
     function validation() {
@@ -136,18 +148,37 @@ $(".btn-primary").on("click", function() {
     }
 
     if (validation() === true) {
-        var userInput = { 
+       
+        var URL = window.location.origin;
+            var userInput = { 
             name: $("#enter-name").val(),
             photo: $("#picture-URL").val(),
-            scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val(), $("#q8").val()]
+            scores: [
+            $("#q1").val(), 
+            $("#q2").val(), 
+            $("#q3").val(), 
+            $("#q4").val(), 
+            $("#q5").val(), 
+            $("#q6").val(), 
+            $("#q7").val(), 
+            $("#q8").val()
+            ]
         }
-        console.log(userInput); 
+        console.log("user input: " + JSON.stringify(userInput)); 
+        
+        $.post(URL + "/data/friends", userInput, function(data) { 
+            console.log("What up");
+            console.log(data);
+        });
+
     } else {
         alert("Please fill in all the data")
     } 
 
+
+
     //MUST ADD THE AJAX FUNCTION
-    
+
 });
 
 </script>

@@ -1,16 +1,16 @@
-var express = require("express");
-var friends = require("../data/friends.js");
+var friends = require("../data/friends");
 
-var app = express(); 
 
 module.exports = function(app){
-    app.get("../data/friends.js", function(req, res){
-    res.json(friends);
-    
-});
-console.log(friends)
 
-app.post("../data/friends.js", function(req, res){
+    app.get("/data/friends", function(req, res){
+    res.json(friends);
+        console.log("ChECK")
+});
+
+
+app.post("/data/friends", function(req, res){
+
 
     var worstFriend = {
         name: "",
@@ -19,7 +19,7 @@ app.post("../data/friends.js", function(req, res){
     }
     //give req.body a name so i dont have to keep typing it out. 
     var z = req.body;
-    console.log(z)
+    console.log("req.body: ", z)
     var inputName = z.name;
     var inputPhoto = z.photo; 
     var inputScore = parseInt(z.scores); 
@@ -38,9 +38,10 @@ app.post("../data/friends.js", function(req, res){
         }
     }
     friends.push(z);
-        console.log("new" + z)
+
     res.json(worstFriend);
-        console.log("worst" + worstFriend);
+
 
 })
-}
+
+} 
