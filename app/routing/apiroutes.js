@@ -14,7 +14,7 @@ app.post("/data/friends", function(req, res){
     var worstFriend = {
         name: "",
         photo: "",
-        score: 0
+        score: 1000
     }
     //give req.body a name so i dont have to keep typing it out. 
     var z = req.body;
@@ -32,7 +32,8 @@ app.post("/data/friends", function(req, res){
             diff += (fk + ik); 
 
             console.log("diff:" +  diff)
-            if(diff >= worstFriend.score) {
+
+            if(diff <= worstFriend.score) {
                 worstFriend.name = friends[i].name;
                 worstFriend.photo = friends[i].photo; 
                 worstFriend.score = diff; 
